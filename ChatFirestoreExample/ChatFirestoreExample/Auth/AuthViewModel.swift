@@ -19,7 +19,7 @@ class AuthViewModel: ObservableObject {
         Firestore.firestore()
             .collection(Collection.users)
             .whereField("deviceId", isEqualTo: SessionManager.shared.deviceId)
-            .whereField("nickname", isEqualTo: nickname)
+            .whereField("nickname", isEqualTo: nickname)            
             .getDocuments { [weak self] (snapshot, _) in
                 let data = snapshot?.documents.first?.data()
                 if let id = snapshot?.documents.first?.documentID {

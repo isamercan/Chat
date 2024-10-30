@@ -21,7 +21,6 @@
 		5B5748322A3707850033C808 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748312A3707850033C808 /* ContentView.swift */; };
 		5B5748342A3707860033C808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5748332A3707860033C808 /* Assets.xcassets */; };
 		5B5748372A3707860033C808 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5748362A3707860033C808 /* Preview Assets.xcassets */; };
-		5B57483E2A370E760033C808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B57483D2A370E760033C808 /* GoogleService-Info.plist */; };
 		5B5748452A3714AE0033C808 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748442A3714AE0033C808 /* AuthViewModel.swift */; };
 		5B5748472A3714BA0033C808 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5748462A3714BA0033C808 /* AuthView.swift */; };
 		5B73CB432A5D465C007D80B0 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73CB422A5D465C007D80B0 /* SearchField.swift */; };
@@ -41,6 +40,8 @@
 		5BC3ED022A5E8F86001481BA /* FirestoreMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3ED012A5E8F86001481BA /* FirestoreMessage.swift */; };
 		5BDBC2C92A6010490073B259 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBC2C82A6010490073B259 /* DataStorageManager.swift */; };
 		5BF334D02ADD3F13004B0F78 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF334CF2ADD3F13004B0F78 /* NetworkMonitor.swift */; };
+		F8D75A6B2CD245DF00F5D41D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8D75A6A2CD245DF00F5D41D /* GoogleService-Info.plist */; };
+		F8D75A6D2CD2551700F5D41D /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D75A6C2CD2551700F5D41D /* FirestoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,7 +74,6 @@
 		5B5748312A3707850033C808 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5B5748332A3707860033C808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5748362A3707860033C808 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5B57483D2A370E760033C808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5B5748442A3714AE0033C808 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		5B5748462A3714BA0033C808 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		5B73CB422A5D465C007D80B0 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		5BC3ED012A5E8F86001481BA /* FirestoreMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMessage.swift; sourceTree = "<group>"; };
 		5BDBC2C82A6010490073B259 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
 		5BF334CF2ADD3F13004B0F78 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		F8D75A6A2CD245DF00F5D41D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8D75A6C2CD2551700F5D41D /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				5B55902E2A384091008E13E2 /* SessionManager.swift */,
 				5B4E1BA92A495FD500E3B27C /* UploadingManager.swift */,
 				5BDBC2C82A6010490073B259 /* DataStorageManager.swift */,
+				F8D75A6C2CD2551700F5D41D /* FirestoreManager.swift */,
 				5BB99CE62A614A040011F32D /* FakeConversationsManager.swift */,
 			);
 			path = Managers;
@@ -195,7 +198,7 @@
 				5B8D762D2A5C18CB00EDE1B7 /* Views */,
 				5B57482F2A3707850033C808 /* ChatFirestoreExampleApp.swift */,
 				5B5748312A3707850033C808 /* ContentView.swift */,
-				5B57483D2A370E760033C808 /* GoogleService-Info.plist */,
+				F8D75A6A2CD245DF00F5D41D /* GoogleService-Info.plist */,
 				5B5748332A3707860033C808 /* Assets.xcassets */,
 				5B5748352A3707860033C808 /* Preview Content */,
 			);
@@ -312,8 +315,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5748372A3707860033C808 /* Preview Assets.xcassets in Resources */,
+				F8D75A6B2CD245DF00F5D41D /* GoogleService-Info.plist in Resources */,
 				5B5748342A3707860033C808 /* Assets.xcassets in Resources */,
-				5B57483E2A370E760033C808 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +343,7 @@
 				5B2D82672A5C1A90009D26A5 /* GroupCreateView.swift in Sources */,
 				5B8D76212A5BC8CF00EDE1B7 /* Constants.swift in Sources */,
 				5B5748472A3714BA0033C808 /* AuthView.swift in Sources */,
+				F8D75A6D2CD2551700F5D41D /* FirestoreManager.swift in Sources */,
 				5B9920F02A405B5500995901 /* Utils.swift in Sources */,
 				5B5748452A3714AE0033C808 /* AuthViewModel.swift in Sources */,
 				5BC3ED022A5E8F86001481BA /* FirestoreMessage.swift in Sources */,
@@ -480,12 +484,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatFirestoreExample/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FZXCM5CJ7P;
+				DEVELOPMENT_TEAM = 8G5CDAH964;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatFirestoreExample/Info.plist;
@@ -507,7 +510,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.exyte.chatFirestoreExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Chat example Firestore Dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,12 +521,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatFirestoreExample/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = FZXCM5CJ7P;
+				DEVELOPMENT_TEAM = 8G5CDAH964;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatFirestoreExample/Info.plist;
@@ -546,7 +547,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.exyte.chatFirestoreExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Chat example Firestore AppStore";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

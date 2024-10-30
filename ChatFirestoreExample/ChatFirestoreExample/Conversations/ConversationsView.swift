@@ -12,7 +12,7 @@ struct ConversationsView: View {
     @ObservedObject var dataStorage = DataStorageManager.shared
     @StateObject var viewModel = ConversationsViewModel()
     @StateObject var networkMonitor = NetworkMonitor()
-
+    
     @State var showUsersList = false
     @State var navPath = NavigationPath()
 

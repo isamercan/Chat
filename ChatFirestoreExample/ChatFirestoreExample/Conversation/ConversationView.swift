@@ -26,7 +26,7 @@ struct ConversationView: View {
         }
         .mediaPickerTheme(
             main: .init(
-                text: .white,
+                text: .black,
                 albumSelectionBackground: .examplePickerBg,
                 fullscreenPhotoBackground: .examplePickerBg
             ),
