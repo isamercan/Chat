@@ -25,11 +25,16 @@ class DataStorageManager: ObservableObject {
     }
 
     func getConversations() async {
-        let snapshot = try? await Firestore.firestore()
-            .collection(Collection.conversations)
-            .whereField("users", arrayContains: SessionManager.currentUserId)
-            .getDocuments()
-        storeConversations(snapshot)
+        do {
+            let snapshot = try await Firestore.firestore()
+                .collection(Collection.conversations)
+                .whereField("users", arrayContainsAny: [SessionManager.currentUserId])
+                .getDocuments()
+            storeConversations(snapshot)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 
     func subscribeToUpdates() {
@@ -38,17 +43,12 @@ class DataStorageManager: ObservableObject {
             .addSnapshotListener { [weak self] (snapshot, _) in
                 guard let self else { return }
                 self.storeUsers(snapshot)
-                Task {
-                    await self.getConversations() // update in case some new user didn't make it in time for conversations subscription
-                }
+                
             }
 
-        Firestore.firestore()
-            .collection(Collection.conversations)
-            .whereField("users", arrayContains: SessionManager.currentUserId)
-            .addSnapshotListener() { [weak self] (snapshot, _) in
-                self?.storeConversations(snapshot)
-            }
+        Task {
+            await self.getConversations() // update in case some new user didn't make it in time for conversations subscription
+        }
     }
 
     private func storeUsers(_ snapshot: QuerySnapshot?) {

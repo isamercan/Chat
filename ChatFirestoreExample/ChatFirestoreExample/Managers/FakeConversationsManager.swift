@@ -14,35 +14,41 @@ class FakeConversationsManager {
 
     func createFakesIfNeeded() {
         Task {
-            // check if users were already created
-            let usersSnapshot = try? await Firestore.firestore()
-                .collection(Collection.users)
-                .whereField("deviceId", isEqualTo: "0")
-                .getDocuments()
+            do {
+                // check if users were already created
+                let usersSnapshot = try await Firestore.firestore()
+                    .collection(Collection.users)
+                    .whereField("deviceId", isEqualTo: "0")
+                    .getDocuments()
 
-            // if not - create both: users and conversations
-            if usersSnapshot?.isEmpty ?? false {
-                addFakeUsersWithConversations()
-                return
-            }
-
-            // if yes - check if conversations were already created
-            let snapshot = try? await Firestore.firestore()
-                .collection(Collection.conversations)
-                .whereField("users", arrayContains: SessionManager.currentUserId)
-                .getDocuments()
-
-            // if not - create conversations with current user and every fake user
-            let fakeConversations = snapshot?.documents.filter {
-                if let c = try? $0.data(as: FirestoreConversation.self) {
-                    return c.users.contains { ["Bob", "Steve", "Tim"].contains($0) }
+                //MARK: if not - create both: users and conversations
+                if usersSnapshot.isEmpty {
+                    addFakeUsersWithConversations()
+                    return
                 }
-                return false
-            } ?? []
-            if fakeConversations.isEmpty {
-                addFakeConversations()
+
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            do {
+                let db = Firestore.firestore()
+                let snapshot = try await db.collection(Collection.conversations).whereField("users", in: [SessionManager.currentUserId]).getDocuments()
+
+//                // if yes - check if conversations were already created
+//                let snapshot = try await Firestore.firestore()
+//                    .collection(Collection.conversations)
+//                    .whereField("users", arrayContainsAny: [SessionManager.currentUserId])
+//                    .getDocuments()
+
+                if snapshot.isEmpty {
+                    addFakeConversations()
+                }
+            }catch {
+                print(error.localizedDescription)
             }
         }
+            
     }
 
     func addFakeUsersWithConversations() {

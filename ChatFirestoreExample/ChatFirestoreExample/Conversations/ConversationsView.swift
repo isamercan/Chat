@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ExyteMediaPicker
 
 struct ConversationsView: View {
 
     @ObservedObject var dataStorage = DataStorageManager.shared
     @StateObject var viewModel = ConversationsViewModel()
     @StateObject var networkMonitor = NetworkMonitor()
+    @StateObject var usersViewModel = UsersViewModel()
     
     @State var showUsersList = false
     @State var navPath = NavigationPath()
@@ -37,6 +39,20 @@ struct ConversationsView: View {
             
             SearchField(text: $viewModel.searchText)
                 .padding(.horizontal, 12)
+            
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(usersViewModel.filteredUsers, id: \.self) { user in
+                        VStack {
+                            AvatarView(url: user.avatarURL, size: 90)
+                            Text(user.name)
+                        }
+                    }
+                }.navigationDestination(for: User.self) { user in
+                    ConversationView(viewModel: ConversationViewModel(user: user))
+                }
+            }.frame(height: 120)
+            
 
             List(viewModel.filteredConversations) { conversation in
                 HStack {
